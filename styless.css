@@ -1,0 +1,137 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f6f6f6;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #b19cd9;
+  color: white;
+}
+
+.container-logo img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.container-titulo h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.bts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.member {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.member:hover {
+  transform: scale(1.05);
+}
+
+.member img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.music {
+  margin-top: 2rem;
+  background-color: #e8d1ff;
+  padding: 2rem 0;
+}
+
+.music button {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.music button:hover {
+  background-color: #4b0082;
+}
+
+.info-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(106, 13, 173, 0.6); 
+  width: 300px;
+  z-index: 100;
+  text-align: left;
+  animation: fadeIn 0.4s ease;
+}
+
+
+.info-box h2 {
+  color: #6a0dad;
+  text-align: center;
+}
+
+.info-box p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+#closeInfo {
+  display: block;
+  margin-left: auto;
+  font-size: 20px;
+  cursor: pointer;
+  color: #6a0dad;
+  text-align: right;
+  transition: transform 0.2s ease;
+}
+
+#closeInfo:hover {
+  transform: scale(1.2); 
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+footer {
+  background-color :plum;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.Dark-Mode {
+    background: black;
+    color: #fff;
+}
+

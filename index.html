@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTS - Catálogo Interactivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+  <header class="shadow">
+    <div class="container-logo">
+      <img src="assets/logo.jpg" alt="logo bts">
+    </div>
+    <div class="container-titulo">
+      <h1>BANGTAN SONYEONDAN</h1> 
+    </div>
+    <div>
+      <button id="Dark-Mode">DarkMode</button>
+    </div>
+  </header>
+
+  <section class="bts-container">
+    <div class="member" data-name="RM" data-info="Nombre real: Kim Namjoon. Líder y rapero principal. Nació el 12 de septiembre de 1994 en Ilsan, Corea del Sur.">
+      <img src="assets/nam.jpg" alt="RM">
+      <h2>RM</h2>
+    </div>
+
+    <div class="member" data-name="Jin" data-info="Nombre real: Kim Seokjin. Vocalista y visual del grupo. Nació el 4 de diciembre de 1992 en Anyang, Corea del Sur.">
+      <img src="assets/jin.jpg" alt="Jin">
+      <h2>Jin</h2>
+    </div>
+
+    <div class="member" data-name="Suga" data-info="Nombre real: Min Yoongi. Rapero y productor. Nació el 9 de marzo de 1993 en Daegu, Corea del Sur.">
+      <img src="assets/suga.jpg" alt="Suga">
+      <h2>Suga</h2>
+    </div>
+
+    <div class="member" data-name="J-Hope" data-info="Nombre real: Jung Hoseok. Rapero y bailarín principal. Nació el 18 de febrero de 1994 en Gwangju, Corea del Sur.">
+      <img src="assets/hobi.jpg" alt="J-Hope">
+      <h2>J-Hope</h2>
+    </div>
+
+    <div class="member" data-name="Jimin" data-info="Nombre real: Park Jimin. Vocalista y bailarín principal. Nació el 13 de octubre de 1995 en Busan, Corea del Sur.">
+      <img src="assets/jimin.jpg" alt="Jimin">
+      <h2>Jimin</h2>
+    </div>
+
+    <div class="member" data-name="V" data-info="Nombre real: Kim Taehyung. Vocalista. Nació el 30 de diciembre de 1995 en Daegu, Corea del Sur.">
+      <img src="assets/v.jpg" alt="V">
+      <h2>V</h2>
+    </div>
+
+    <div class="member" data-name="Jungkook" data-info="Nombre real: Jeon Jungkook. Vocalista principal, bailarín y maknae. Nació el 1 de septiembre de 1997 en Busan, Corea del Sur.">
+      <img src="assets/jungkook.jpg" alt="Jungkook">
+      <h2>Jungkook</h2>
+    </div>
+  </section>
+
+
+  <div id="infoBox" class="info-box hidden">
+    <span id="closeInfo">&times;</span>
+    <h2 id="memberName"></h2>
+    <p id="memberInfo"></p>
+  </div>
+
+  <section class="music">
+    <h2>Escucha su música en Spotify 🎶</h2>
+    <button id="spotifyBtn">Escuchar música</button>
+  </section>
+
+  <footer>
+    <p>© BTS  tus patrones</p> 
+  </footer>
+
+<script>
+
+  document.getElementById("spotifyBtn").addEventListener("click", function() {
+    window.open("https://open.spotify.com/artist/3Nrfpe0tUJi4K4DXYWgMUX", "_blank");
+  });
+
+
+  const members = document.querySelectorAll(".member");
+  const infoBox = document.getElementById("infoBox");
+  const memberName = document.getElementById("memberName");
+  const memberInfo = document.getElementById("memberInfo");
+  const closeInfo = document.getElementById("closeInfo");
+
+  members.forEach(member => {
+    member.addEventListener("click", () => {
+      memberName.textContent = member.dataset.name;
+      memberInfo.textContent = member.dataset.info;
+      infoBox.classList.remove("hidden");
+    });
+  });
+
+  // Cerrar cuadro
+  closeInfo.addEventListener("click", () => {
+    infoBox.classList.add("hidden");
+  });
+
+  // 🌙 Dark Mode
+  const BtnDarkMode = document.getElementById("Dark-Mode");
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("Dark-Mode");
+
+    if (document.body.classList.contains("Dark-Mode")) {
+      BtnDarkMode.innerText = "Modo Claro ☀️";
+    } else {
+      BtnDarkMode.innerText = "Modo Oscuro 🌙";
+    }
+  }
+
+  BtnDarkMode.addEventListener("click", toggleDarkMode);
+</script>
+
+</body>
+</html>
+
+    
